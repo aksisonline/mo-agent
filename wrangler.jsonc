@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mo-agent",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-08",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "ai": {
+    "binding": "AI",
+    "remote": true,
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MO_QUOTAS",
+        "class_name": "MoQuota",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["MoQuota"],
+    },
+  ],
+  "vars": {
+    "ACCESS_LOCAL_DEV": "false",
+    "AGENT_INTENT": "Mo represents the portfolio owner. Answer concise questions about the owner and their verified portfolio. Welcome greetings and voluntary visitor name introductions. Do not perform unrelated general-purpose tasks.",
+    "WEBSITE_CONTEXT": "A portfolio assistant template. No owner facts have been configured yet.",
+    "OLLAMA_BASE_URL": "https://ollama.com",
+    "OLLAMA_MODEL": "gemma4:31b",
+    "MEMORY_MODEL": "gemma4:31b",
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+}

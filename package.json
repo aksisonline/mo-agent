@@ -1,0 +1,29 @@
+{
+  "name": "mo-agent",
+  "private": true,
+  "description": "A cost-conscious mini agent on Cloudflare with JEV-guided inference and built-in usage guardrails.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "typegen": "wrangler types",
+    "check": "tsc --noEmit",
+    "lint": "oxlint src tests --deny-warnings",
+    "lint:fix": "oxlint src tests --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "bun test",
+    "build": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@types/bun": "latest",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

@@ -1,0 +1,10 @@
+# Copy to .dev.vars. Ollama Cloud uses https://ollama.com and a server-side API key.
+OLLAMA_BASE_URL=https://ollama.com
+OLLAMA_MODEL=gemma4:31b
+MEMORY_MODEL=gemma4:31b
+OLLAMA_API_KEY=your_ollama_cloud_api_key
+# Localhost-only HTTP cookie support. Production defaults to false in Wrangler.
+ACCESS_LOCAL_DEV=true
+# Generate a random secret (at least 32 bytes) and set it in your ignored .dev.vars.
+# For production use the VISITOR_COOKIE_SECRET Worker secret, not a plaintext var.
+VISITOR_COOKIE_SECRET=
